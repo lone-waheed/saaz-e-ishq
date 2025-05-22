@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Every Silence Has a Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e0e;
+      color: #f7f7f7;
+      font-family: 'Cardo', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      transition: background 1.5s ease, color 1.5s ease;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 30px;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #f2d9d9;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 260px;
+      font-size: 1em;
+      margin-top: 20px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    button {
+      padding: 10px 22px;
+      background-color: #c79c9c;
+      border: none;
+      color: white;
+      font-size: 1em;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.4s ease;
+    }
+
+    button:hover {
+      background-color: #b57b7b;
+    }
+
+    .lit {
+      background-color: #fefdfc;
+      color: #2a1a1a;
+    }
+
+    .lit h1 {
+      color: #8c2f48;
+    }
+
+    .lit input {
+      background-color: #fff;
+      color: #222;
+      border: 1px solid #aaa;
+    }
+
+    .lit button {
+      background-color: #8c2f48;
+    }
+
+    .lit button:hover {
+      background-color: #661f33;
+    }
+
+    #quote-box {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    #quote {
+      font-style: italic;
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    #continueBtn {
+      padding: 10px 22px;
+      font-size: 1em;
+      background-color: #8c2f48;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #continueBtn:hover {
+      background-color: #661f33;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Every silence has a name…</h1>
+    <p><em>Some doors don’t need keys —</em><br>They open with memories.</p>
+    <p>A name once saved in a contact list… and then saved in a heart.</p>
+    <p>He asked her to save it — a name that meant nothing to the world,<br>but everything in their silent world.</p>
+    <p>She smiled. Maybe even teased him. But she saved it anyway.<br>And from that day, even her silence felt warmer.</p>
+    <p><strong>Remember it?</strong><br>It wasn’t Waheed. It wasn’t a poet. It wasn’t a prince.<br>It was the one who appeared as a joke… but stayed as a prayer.</p>
+
+    <input type="password" id="password" placeholder="Type the name you once saved…">
+    <br>
+    <button onclick="checkPassword()">Enter</button>
+
+    <div id="quote-box">
+      <p id="quote">“The moment you remembered… the silence bloomed like spring.”</p>
+      <button id="continueBtn" onclick="goNext()">Continue the story…</button>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value.toLowerCase().trim();
+      if (input === "jabar kak") {
+        document.body.classList.add('lit');
+        document.getElementById('quote-box').style.display = 'block';
+      } else {
+        alert("Hayee Aru, kyun aapko wo shaks yaad nahi… try again.");
+      }
+    }
+
+    function goNext() {
+      window.location.href = "page1.html";
+    }
+  </script>
+</body>
+</html>
